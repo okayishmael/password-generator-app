@@ -1,0 +1,311 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --suface: #24232c;
+  --color-dark: #817d92;
+  --color-light: #e6e5ea;
+  --green: #a4ffaf;
+  --yellow: #f8cd65;
+  --orange: #fb7c58;
+  --red: #f64a4a;
+  --body-bg-color: #18171f;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "JetBrainsMono";
+  min-height: 100vh;
+  background: linear-gradient(180deg, #14131b 0%, #08070b 100%);
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url(../assets/fonts/static/JetBrainsMono-Bold.ttf) format("truetype");
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  background-color: transparent;
+}
+
+.password-field,
+.password-settings {
+  background-color: var(--suface);
+  padding: 2.4rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.8rem;
+  color: var(--color-light);
+}
+
+/* Password Field */
+
+.password-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 8rem;
+  padding: 0 3.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.password-display {
+  font-size: 3.4rem;
+  color: var(--color-light);
+}
+
+.password-placeholder {
+  font-size: 3.4rem;
+  color: var(--color-dark);
+  opacity: 0.25;
+}
+
+.copy-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.copied-text {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.copy-btn:hover img {
+  filter: contrast(3.5);
+}
+
+/* PASSWORD SETTINGS */
+
+.char-length {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.2rem;
+}
+
+.char-count {
+  font-size: 3.2rem;
+  color: var(--color-light);
+}
+
+.char-length-slider {
+  appearance: none;
+  -webkit-appearance: none;
+  margin-right: 15px;
+  width: 100%;
+  height: 7px;
+  margin-bottom: 3.6rem;
+  background: hsl(248, 15%, 11%);
+  background-image: linear-gradient(hsl(127, 100%, 82%), hsl(127, 100%, 82%));
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+/*FIREFOX*/
+.char-length-slider::-moz-range-thumb {
+  -moz-appearance: none;
+  height: 28px;
+  width: 28px;
+  border: 2px solid var(--color-light);
+  border-radius: 50%;
+  background-color: var(--color-light);
+  cursor: pointer;
+}
+
+.char-length-slider::-moz-range-thumb:hover,
+.char-length-slider::-moz-range-thumb:active {
+  border: 2px solid var(--green);
+  background-color: hsl(248, 15%, 11%);
+}
+
+/*CHROME*/
+.char-length-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  border: 2px solid var(--color-light);
+  border-radius: 50%;
+  background-color: var(--color-light);
+  cursor: pointer;
+}
+
+.char-length-slider::-webkit-slider-thumb:hover {
+  border: 2px solid var(--green);
+  background-color: var(--body-bg-color);
+}
+
+.char-length-slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+/*CHECK BOXES*/
+.chars-include-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin-bottom: 3.4rem;
+}
+
+label {
+  display: block;
+  padding-left: 4.4rem;
+  position: relative;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 2px;
+  left: 0;
+
+  height: 2rem;
+  width: 2rem;
+  border: 2px solid var(--color-light);
+  cursor: pointer;
+}
+
+.custom-checkbox::after {
+  display: none;
+  content: url("/assets/images/icon-check.svg");
+  position: absolute;
+  top: 3px;
+}
+
+.custom-checkbox:hover {
+  border-color: var(--green);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox {
+  border-color: var(--green);
+  background-color: var(--green);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox::after {
+  display: block;
+}
+
+input[type="checkbox"]:focus ~ .custom-checkbox {
+  outline: 2px solid Highlight;
+  outline: 2px solid -webkit-focus-ring-color;
+}
+
+/* Password Strength Styles */
+
+.strength-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: var(--color-dark);
+
+  margin-bottom: 3.2rem;
+  padding: 0 3.2rem;
+  height: 7.2rem;
+  background-color: var(--body-bg-color);
+}
+
+.stregth-rating {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.stregth-rating-text {
+  font-size: 2.4rem;
+  color: var(--color-dark);
+}
+
+.strength-rating-bars {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.bar {
+  width: 1rem;
+  height: 2.8rem;
+  border: 2px solid var(--color-light);
+  background: none;
+}
+
+/*GENERATE BUTTON*/
+
+.generator-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+
+  width: 100%;
+  padding: 1.9rem;
+  border-radius: 0;
+  border: 0;
+  background-color: var(--green);
+  cursor: pointer;
+}
+
+.generator-btn:hover {
+  border: 2px solid var(--green);
+  background: none;
+  color: var(--green);
+}
+
+.generator-btn:hover path {
+  fill: var(--green);
+}
+
+/* QUERIES */
+@media (min-width: 42.5rem) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    width: 40rem;
+  }
+}
