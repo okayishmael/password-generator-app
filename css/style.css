@@ -49,7 +49,8 @@ h1 {
   margin-bottom: 1rem;
 }
 
-p {
+p,
+label {
   font-size: 1.8rem;
   color: var(--color-light);
 }
@@ -67,7 +68,7 @@ p {
 }
 
 .password-display {
-  font-size: 3.4rem;
+  font-size: 1.4rem;
   color: var(--color-light);
 }
 
@@ -206,7 +207,7 @@ input[type="checkbox"] {
   display: none;
   content: url("/assets/images/icon-check.svg");
   position: absolute;
-  top: 3px;
+  top: -3px;
 }
 
 .custom-checkbox:hover {
@@ -306,6 +307,6 @@ input[type="checkbox"]:focus ~ .custom-checkbox {
     min-height: 100vh;
   }
   .container {
-    width: 40rem;
+    width: 50rem;
   }
 }
