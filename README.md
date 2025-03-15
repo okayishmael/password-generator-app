@@ -49,7 +49,7 @@ My current focus is JavaScript and it my first coding language apart from HTML a
 
 - Website - [My Linkedin](https://www.linkedin.com/in/ishmael-sunday)
 - Frontend Mentor - [@okayishmael](https://www.frontendmentor.io/profile/okayishmael)
-- Portfolio - [Graphic Design](https://github.com/okayishmael/Ishmael-Sunday-design-portfolio)
+- Portfolio - [Graphic Design](https://okayishmael.github.io/Ishmael-Sunday-design-portfolio/)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
