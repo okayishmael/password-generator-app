@@ -307,6 +307,6 @@ input[type="checkbox"]:focus ~ .custom-checkbox {
     min-height: 100vh;
   }
   .container {
-    width: 50rem;
+    width: 60rem;
   }
 }
